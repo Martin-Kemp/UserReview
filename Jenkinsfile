@@ -6,8 +6,8 @@ pipeline {
                 // build venv
                 sh """
                 #!/bin/bash
-                pip install -r requirements.txt
-                python getData.py
+                pip3 install -r requirements.txt
+                python3 getData.py
                 """
             }
         }
