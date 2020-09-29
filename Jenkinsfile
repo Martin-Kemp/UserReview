@@ -11,13 +11,10 @@ pipeline {
             }
         }
         stage('Test') { 
+            steps {
                 // Perform tests eg: does file exist?
-                def exists = fileExists './userlist.html'
-                if (exists) {
-                    echo 'Yes'
-                } else {
-                    echo 'No'
-                }
+                sh 'ls -la'
+            }
         }
         stage('Deploy') { 
             steps {
