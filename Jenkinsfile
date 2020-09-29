@@ -4,11 +4,13 @@ pipeline {
         stage('Build') { 
             steps {
                 // build venv
-                sh 'python3 -m venv venv'
-                sh 'source ./venv/bin/activate'
-                sh 'pip install -r requirements.txt'
-                // get data
-                sh 'python getData.py'
+                sh """
+                #!/bin/bash
+                python3 -m venv venv
+                source ./venv/bin/activate
+                pip install -r requirements.txt
+                python getData.py
+                """
             }
         }
         stage('Test') { 
