@@ -11,7 +11,6 @@ pipeline {
             }
         }
         stage('Test') { 
-            steps {
                 // Perform tests eg: does file exist?
                 def exists = fileExists './userlist.html'
                 if (exists) {
@@ -19,7 +18,6 @@ pipeline {
                 } else {
                     echo 'No'
                 }
-            }
         }
         stage('Deploy') { 
             steps {
