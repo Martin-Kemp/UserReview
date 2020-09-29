@@ -3,9 +3,12 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                // run script to pull users
-                sh 'pwd'
-                // convert mardown file to pdf
+                // build venv
+                sh 'python3 -m venv venv'
+                sh 'source ./venv/bin/activate'
+                sh 'pip install -r requirements.txt'
+                // get data
+                sh 'python getData.py'
             }
         }
         stage('Test') { 
