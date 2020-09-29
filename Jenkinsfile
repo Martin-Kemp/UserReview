@@ -13,7 +13,16 @@ pipeline {
         stage('Test') { 
             steps {
                 // Perform tests eg: does file exist?
-                sh 'ls -la'
+                sh """
+                FILE=./userlist.html
+                if [ -f "$FILE" ]; then
+                    echo "$FILE exists."
+                else 
+                    echo "$FILE does not exist."
+                    exit
+                fi
+                """
+
             }
         }
         stage('Deploy') { 
