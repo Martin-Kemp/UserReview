@@ -9,9 +9,11 @@ for k in userList["data"]:
     print(k["first_name"] + " " + k["last_name"])
 
 # Create Markdown file
-f = open("userlist.md", "w")
-f.write("# User List\n")
+f = open("userlist.html", "w")
+f.write("<!DOCTYPE html>\n<html>\n<head>\n<title>User List</title>\n</head>\n")
+f.write("<body><ul>\n")
 for k in userList["data"]:
-    user = ("- " + k["first_name"] + " " + k["last_name"] + "\n")
+    user = ("<li>" + k["first_name"] + " " + k["last_name"] + "</li>\n")
     f.write(user)
+f.write("</ul></body></html>\n")
 f.close()

@@ -7,7 +7,6 @@ pipeline {
                 sh """
                 #!/bin/bash
                 python3 getData.py
-                mdpdf userlist.md --output userlist.pdf
                 """
             }
         }
@@ -20,7 +19,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 // Start server
-                sh 'echo test'
+                sh 'cp ./userlist.html /var/www/html/index.html'
             }
         }
     }
