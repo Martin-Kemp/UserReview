@@ -4,14 +4,14 @@ pipeline {
         stage('Build') { 
             steps {
                 // run script to pull users
-                sh 'echo test'
+                sh 'pwd'
                 // convert mardown file to pdf
             }
         }
         stage('Test') { 
             steps {
                 // Perform tests eg: does file exist?
-                sh 'echo test'
+                sh 'ls -la'
             }
         }
         stage('Deploy') { 
