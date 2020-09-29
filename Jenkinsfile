@@ -7,6 +7,7 @@ pipeline {
                 sh """
                 #!/bin/bash
                 python3 getData.py
+                mdpdf userlist.md --output userlist.pdf
                 """
             }
         }
