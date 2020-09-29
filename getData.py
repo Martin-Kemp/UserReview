@@ -11,7 +11,7 @@ for k in userList["data"]:
 # Create Markdown file
 f = open("userlist.html", "w")
 f.write("<!DOCTYPE html>\n<html>\n<head>\n<title>User List</title>\n</head>\n")
-f.write("<body><ul>\n")
+f.write("<body><h1>List of recent users</h1><p>The following users have recently logged in</p><ul>\n")
 for k in userList["data"]:
     user = ("<li>" + k["first_name"] + " " + k["last_name"] + "</li>\n")
     f.write(user)
