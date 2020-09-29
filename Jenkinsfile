@@ -13,13 +13,12 @@ pipeline {
         stage('Test') { 
             steps {
                 // Perform tests eg: does file exist?
-                sh """
-                FILE=./userlist.html
-                if [ -f "$FILE" ]; then
-                    echo "$FILE exists."
-                fi
-                """
-
+                def exists = fileExists './userlist.html'
+                if (exists) {
+                    echo 'Yes'
+                } else {
+                    echo 'No'
+                }
             }
         }
         stage('Deploy') { 
